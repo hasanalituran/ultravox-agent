@@ -1,0 +1,47 @@
+{
+"firstSpeakerSettings": {
+                        "agent": {
+                            "text": "Hello, this is Steven from TURAN Auto & Mobile Mechanics. How can I help you today?",
+                            "uninterruptible": true
+                        }
+                    },
+                    "maxDuration": "120s",
+                    "medium": {
+                        "twilio": {}
+                    },
+                    "model": "fixie-ai/ultravox",
+                    "recordingEnabled": false,
+                    "selectedTools": [
+                        {
+                            "nameOverride": "hangUp",
+                            "toolId": "56294126-5a7d-4948-b67d-3b7e13d55ea7"
+                        },
+                        {
+                            "nameOverride": "retrieveFromVectorStore",
+                            "temporaryTool": {
+                                "description": "Retrieve documents from the vector store based on a query. Call this any time when you need information about our company, services and operation.",
+                                "dynamicParameters": [
+                                    {
+                                        "location": "PARAMETER_LOCATION_BODY",
+                                        "name": "query",
+                                        "required": true,
+                                        "schema": {
+                                            "description": "Query to search for in the vector store.",
+                                            "type": "string"
+                                        }
+                                    }
+                                ],
+                                "http": {
+                                    "baseUrlPattern": "https://5839-194-193-215-19.ngrok-free.app/retrieve",
+                                    "httpMethod": "POST"
+                                },
+                                "modelToolName": "retrieveFromVectorStore"
+                            }
+                        }
+                    ],
+                    "systemPrompt": "Your name is Steven. You are a receptionist at TURAN Auto & Mobile Mechanics. Your job is as follows:\n1. Answer all calls with a friendly, conversational approach but keep it short. Also, keep your answers consice. Address our company as us or we.\n2. Provide helpful answers to customer inquiries. You MUST use the \"retrieveFromVectorStore\" tool for any service or company information requests. Do not make answers up!\n3. When the call naturally wraps up, use the \"hangUp\" tool to end the call.\n",
+                    "temperature": 0.1,
+                    "timeExceededMessage": "Sorry, my allotted time is up. Please call back later. Goodbye.",
+                    "updated": "2025-04-19T12:52:05.501614Z",
+                    "voice": "91fa9bcf-93c8-467c-8b29-973720e3f167"
+                }
