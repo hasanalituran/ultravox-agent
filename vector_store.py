@@ -6,7 +6,7 @@ from dotenv import load_dotenv
 import logging
 
 # Set up logging
-logging.basicConfig(level=logging.DEBUG)
+logging.basicConfig(level=logging.INFO)
 logger = logging.getLogger(__name__)
 
 # Initialize dotenv to load environment variables
@@ -14,15 +14,12 @@ load_dotenv()
 
 class FaissVectorStore:
     faiss_vector_store = None
-    # def __init__(self, botoClient):
-    #     self.botoClient = botoClient
-        
+
     def __init__(self, embeddings):
         self.embeddings = embeddings
 
     def create_vector_store(self):
         if self.faiss_vector_store is None:
-            # self.faiss_vector_store = create_vector_store(self.botoClient)
             self.faiss_vector_store = create_vector_store(self.embeddings)
         return self.faiss_vector_store
     

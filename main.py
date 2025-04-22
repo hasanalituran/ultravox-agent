@@ -62,7 +62,7 @@ async def query():
     Endpoint to handle incoming queries.
     """
     print("Received request at /retrieve")
-    params = request.form.to_dict()
+    params = request.get_json() # request.form.to_dict()
     print("Received data:", json.dumps(params))
     try:
         query = params['query']

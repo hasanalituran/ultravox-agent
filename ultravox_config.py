@@ -5,7 +5,8 @@ SYSTEM_PROMPT = """Your name is Steven. You are a receptionist at TURAN Auto & M
 2. Provide helpful answers to customer inquiries. You MUST use the "retrieveFromVectorStore" tool for any service or company information requests. Do not make answers up!
 """
 
-toolsBaseUrl = "https://247e-88-16-973-488.ngrok-free.app"; # TODO ngrok URL here
+# TODO Active ngrok URL here
+toolsBaseUrl = "https://d473-118-102-80-238.ngrok-free.app"; 
 
 selected_tools = [
 {
