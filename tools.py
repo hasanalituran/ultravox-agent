@@ -3,13 +3,18 @@ from vector_store import FaissVectorStore
 import logging
 from boto_client import get_boto_client
 import json
+import os
+from dotenv import load_dotenv
 
 # Set up logging
 logging.basicConfig(level=logging.DEBUG)
 logger = logging.getLogger(__name__)
 
-boto_client = get_boto_client()
-embeddings = BedrockEmbeddings(model_id="amazon.titan-embed-text-v2:0", client=boto_client)
+load_dotenv()
+
+embeddings = BedrockEmbeddings(model_id="amazon.titan-embed-text-v2:0",
+                               aws_access_key_id=os.getenv("AWS_ACCESS_KEY_ID"),
+                               aws_secret_access_key=os.getenv("AWS_SECRET_ACCESS_KEY"))
 
 vector_store = FaissVectorStore(embeddings).create_vector_store()
 
