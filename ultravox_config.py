@@ -6,7 +6,7 @@ SYSTEM_PROMPT = """Your name is Steven. You are a receptionist at TURAN Auto & M
 """
 
 # AWS EC2 instance public IP address/port
-toolsBaseUrl = "http://3.24.240.119:3005"; 
+toolsBaseUrl = "https://phoenix-joint-vervet.ngrok-free.app"; 
 
 selected_tools = [
 {

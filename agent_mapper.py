@@ -11,12 +11,12 @@ class AgentMapper:
     def __init__(self):
         if self.agent_id_service_number_mapping is None:
             self.agent_id_service_number_mapping = {
-            "+61258503402": "025e4299-deed-4cc9-84eb-0f2db58e9da5",
+            "+61258503402": "02d42275-2547-4d31-97df-8e986f2c7d67",
             # Add more mappings as needed
             }
         if self.agent_id_account_sid_mapping is None:
             self.agent_id_account_sid_mapping = {
-            "ACa41b22d9db143b4e67cd27140ccc6157": "025e4299-deed-4cc9-84eb-0f2db58e9da5",
+            "ACa41b22d9db143b4e67cd27140ccc6157": "02d42275-2547-4d31-97df-8e986f2c7d67",
             # Add more mappings as needed
             }
         
