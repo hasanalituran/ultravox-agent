@@ -5,8 +5,8 @@ SYSTEM_PROMPT = """Your name is Steven. You are a receptionist at TURAN Auto & M
 2. Provide helpful answers to customer inquiries. You MUST use the "retrieveFromVectorStore" tool for any service or company information requests. Do not make answers up!
 """
 
-# TODO Active ngrok URL here
-toolsBaseUrl = "https://d473-118-102-80-238.ngrok-free.app"; 
+# AWS EC2 instance public IP address/port
+toolsBaseUrl = "3.24.240.119:3005"; 
 
 selected_tools = [
 {
