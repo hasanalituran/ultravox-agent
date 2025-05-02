@@ -9,7 +9,7 @@ app = Flask(__name__)
 port = 3000
 
 global agent_service_mapper
-agent_service_mapper = AgentMapper()
+agent_mapper = AgentMapper()
  
 # create an default endpoint to check if the server is running
 @app.route('/', methods=['GET'])
@@ -42,7 +42,7 @@ def incoming_call():
         called_service_number = params["Called"]
         call_sid = params["AccountSid"]
 
-        agent_id = agent_service_mapper.get_service_name(called_service_number, call_sid)
+        agent_id = agent_mapper.get_service_agent_id(called_service_number, call_sid)
         print("Agent ID:", agent_id)
 
         ultravox_response = create_ultravox_call_with_agent(agent_id)
